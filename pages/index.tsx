@@ -6,7 +6,7 @@ const Home: NextPage = () => {
       {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
         <div
           key={i}
-          className='flex cursor-pointer justify-between border-b px-4 pb-4'
+          className='flex cursor-pointer  justify-between border-b px-4 pb-5'
         >
           <div className='flex space-x-4'>
             <div className='h-20 w-20 rounded-md bg-gray-400' />
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className='flex items-end justify-end space-x-2'>
-            <div className='flex items-center space-x-0.5 text-sm text-gray-600'>
+            <div className='flex items-center space-x-0.5 text-sm  text-gray-600'>
               <svg
                 className='h-4 w-4'
                 fill='none'
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
               </svg>
               <span>1</span>
             </div>
-            <div className='flex items-center space-x-0.5 text-sm text-gray-600'>
+            <div className='flex items-center space-x-0.5 text-sm  text-gray-600'>
               <svg
                 className='h-4 w-4'
                 fill='none'
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       ))}
-      <button className='fixed bottom-24 right-5 cursor-pointer rounded-full bg-orange-400 p-4 text-white shadow-xl  transition-colors hover:bg-orange-500'>
+      <button className='fixed bottom-24 right-5 cursor-pointer  rounded-full bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500'>
         <svg
           className='h-6 w-6'
           xmlns='http://www.w3.org/2000/svg'
