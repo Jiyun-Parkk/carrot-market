@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 import React from 'react';
 
-const Live: NextPage = () => {
+const Streams: NextPage = () => {
   return (
-    <div className='divide-y-2'>
+    <div className='divide-y-2 py-10'>
       {[1, 2, 3, 4, 5].map((_, i) => (
         <div key={i} className='px-4 pt-4'>
           <div className='aspect-video w-full rounded-md bg-slate-300 shadow-sm' />
@@ -29,4 +29,4 @@ const Live: NextPage = () => {
   );
 };
 
-export default Live;
+export default Streams;
