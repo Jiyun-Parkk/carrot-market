@@ -1,13 +1,14 @@
-import { useState } from 'react'
+import { Email, Phone } from 'components/Form';
+import { useState } from 'react';
 
 function buttonClass(...classnames: string[]) {
-  return classnames.join(' ')
+  return classnames.join(' ');
 }
 
 export default function Enter() {
-  const [method, setMethod] = useState<'email' | 'phone'>('email')
-  const onEmailClick = () => setMethod('email')
-  const onPhoneClick = () => setMethod('phone')
+  const [method, setMethod] = useState<'email' | 'phone'>('email');
+  const onEmailClick = () => setMethod('email');
+  const onPhoneClick = () => setMethod('phone');
   return (
     <div className='mt-16 px-4'>
       <h3 className='text-center text-3xl font-bold'>Welcome to Carrot</h3>
@@ -39,33 +40,7 @@ export default function Enter() {
           </div>
         </div>
         <form className='mt-8 flex flex-col'>
-          <label htmlFor='input' className='text-sm font-medium text-gray-700'>
-            {method === 'email' ? 'Email address' : null}
-            {method === 'phone' ? 'Phone number' : null}
-          </label>
-          <div>
-            {method === 'email' ? (
-              <input
-                id='input'
-                type='email'
-                required
-                className='focus w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-orange-500'
-              />
-            ) : null}
-            {method === 'phone' ? (
-              <div className='flex rounded-md shadow-sm'>
-                <span className='flex select-none items-center justify-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-gray-500'>
-                  +82
-                </span>
-                <input
-                  id='input'
-                  type='number'
-                  required
-                  className='focus w-full appearance-none rounded-md rounded-l-none border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-orange-500'
-                />
-              </div>
-            ) : null}
-          </div>
+          {method === 'email' ? <Email /> : <Phone />}
           <button className='focus:ring-offest-2 transition-bg mt-6 rounded-md border border-transparent bg-orange-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500'>
             {method === 'email' ? 'Get login link' : null}
             {method === 'phone' ? 'Get one-time password' : null}
@@ -109,5 +84,5 @@ export default function Enter() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,5 @@
 import { Layout } from 'components';
+import { Email, Phone } from 'components/Form';
 import { NextPage } from 'next';
 import React from 'react';
 
@@ -22,33 +23,10 @@ const EditProfile: NextPage = () => {
           </label>
         </div>
         <div className='space-y-1'>
-          <label htmlFor='email' className='text-sm font-medium text-gray-700'>
-            Email address
-          </label>
-          <div className='mt-1'>
-            <input
-              id='email'
-              type='email'
-              required
-              className='focus w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-orange-500'
-            />
-          </div>
+          <Email />
         </div>
         <div className='space-y-1'>
-          <label htmlFor='phone' className='text-sm font-medium text-gray-700'>
-            Phone number
-          </label>
-          <div className='flex rounded-md shadow-sm'>
-            <span className='flex select-none items-center justify-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-gray-500'>
-              +82
-            </span>
-            <input
-              id='input'
-              type='number'
-              required
-              className='focus w-full appearance-none rounded-md rounded-l-none border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-orange-500'
-            />
-          </div>
+          <Phone />
         </div>
         <button className='transition-bg focue:ring-offset-2 mt-6 w-full rounded-md border border-transparent bg-orange-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2'>
           Update EditProfile
