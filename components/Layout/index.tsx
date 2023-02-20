@@ -6,22 +6,23 @@ import { BiHome, BiUser, BiVideo } from 'react-icons/bi';
 import { BsChat, BsNewspaper } from 'react-icons/bs';
 import { MdArrowBackIos } from 'react-icons/md';
 interface LayoutProps {
+  children: React.ReactNode;
   title?: string;
   canGoBack?: boolean;
   hasTabBar?: boolean;
-  children: React.ReactNode;
 }
 
 export const Layout = ({
+  children,
   title,
   canGoBack,
   hasTabBar,
-  children,
 }: LayoutProps) => {
   const router = useRouter();
-  const onClick = () => {
+  const onClickBack = () => {
     router.back();
   };
+
   return (
     <div>
       <div
@@ -31,7 +32,7 @@ export const Layout = ({
         )}
       >
         {canGoBack ? (
-          <button onClick={onClick}>
+          <button onClick={onClickBack}>
             <MdArrowBackIos />
           </button>
         ) : null}
@@ -44,7 +45,10 @@ export const Layout = ({
             <Link
               key={tab.link}
               href={tab.link}
-              className='flex flex-col items-center space-y-2'
+              className={cls(
+                router.pathname === tab.link ? 'text-orange-500' : '',
+                'flex flex-col items-center space-y-2',
+              )}
             >
               <span className='text-2xl'>{tab.icon}</span>
               <span>{tab.title}</span>
