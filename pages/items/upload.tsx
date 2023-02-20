@@ -1,5 +1,4 @@
-import { FullButton, Layout } from 'components';
-import { UploadItem } from 'components/Items';
+import { Layout, UploadItem } from 'components';
 import type { NextPage } from 'next';
 
 const Upload: NextPage = () => {

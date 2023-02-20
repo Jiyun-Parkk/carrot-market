@@ -1,5 +1,4 @@
-import { Layout, MyMessage, OpponentMessage } from 'components';
-import { MessageInput } from 'components/Chat/MessageInput';
+import { Layout, MyMessage, OpponentMessage, MessageInput } from 'components';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';

@@ -1,4 +1,4 @@
-import { FullButton, Layout } from 'components';
+import { Layout } from 'components';
 import { UploadItem } from 'components/Items';
 import type { NextPage } from 'next';
 

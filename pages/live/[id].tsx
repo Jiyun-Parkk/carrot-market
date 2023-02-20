@@ -1,6 +1,4 @@
-import { Layout, MyMessage } from 'components';
-import { OpponentMessage } from 'components';
-import { MessageInput } from 'components/Chat/MessageInput';
+import { Layout, MyMessage, OpponentMessage, MessageInput } from 'components';
 import type { NextPage } from 'next';
 
 const Stream: NextPage = () => {
