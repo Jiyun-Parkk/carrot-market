@@ -1,4 +1,4 @@
-import { Layout } from 'components';
+import { FullButton, Layout } from 'components';
 import { Email, Phone } from 'components/Form';
 import { NextPage } from 'next';
 import React from 'react';
@@ -28,9 +28,8 @@ const EditProfile: NextPage = () => {
         <div className='space-y-1'>
           <Phone />
         </div>
-        <button className='transition-bg focue:ring-offset-2 mt-6 w-full rounded-md border border-transparent bg-orange-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2'>
-          Update EditProfile
-        </button>
+
+        <FullButton text='Update EditProfile' />
       </div>
     </Layout>
   );
