@@ -2,6 +2,7 @@ import { FloatButton, Layout, Reply, Badge, Question } from 'components';
 import { BiPencil } from 'react-icons/bi';
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Community: NextPage = () => {
   return (
@@ -23,7 +24,7 @@ const Community: NextPage = () => {
             <Reply wonder={1} reply={1} />
           </Link>
         ))}
-        <FloatButton onClick={() => {}}>
+        <FloatButton path='/community/write'>
           <BiPencil />
         </FloatButton>
       </div>

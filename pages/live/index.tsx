@@ -9,9 +9,7 @@ const Streams: NextPage = () => {
   const onClickStream = (i: number) => {
     router.push(`/live/${i}`);
   };
-  const onClickFloatButton = () => {
-    router.push('/live/create');
-  };
+
   return (
     <Layout title='라이브' hasTabBar>
       <div className='divide-y-2 py-10'>
@@ -27,7 +25,7 @@ const Streams: NextPage = () => {
             </h3>
           </div>
         ))}
-        <FloatButton onClick={onClickFloatButton}>
+        <FloatButton path='/live/create'>
           <BsCameraVideo />
         </FloatButton>
       </div>
