@@ -16,7 +16,7 @@ const Profile: NextPage = () => {
           </div>
         </div>
         <div className='mt-10 flex justify-around'>
-          <Link href='/profile/bought' className='flex flex-col items-center'>
+          <Link href='/profile/sold' className='flex flex-col items-center'>
             <div
               className='flex h-14 w-14 items-center
 		  justify-center
@@ -43,7 +43,7 @@ const Profile: NextPage = () => {
               판매내역
             </span>
           </Link>
-          <Link href='/profile/sold' className='flex flex-col items-center'>
+          <Link href='/profile/bought' className='flex flex-col items-center'>
             <div
               className='flex h-14 w-14 items-center
 		  justify-center

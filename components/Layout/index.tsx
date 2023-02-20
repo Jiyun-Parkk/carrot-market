@@ -46,7 +46,7 @@ export const Layout = ({
             </svg>
           </button>
         ) : null}
-        {title ? <span>{title}</span> : null}
+        {title ? <span className='flex-1 text-center'>{title}</span> : null}
       </div>
       <div className={cls('pt-12', hasTabBar ? 'pb-24' : '')}>{children}</div>
       {hasTabBar ? (
