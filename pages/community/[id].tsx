@@ -1,4 +1,11 @@
-import { Badge, FullButton, Layout, Question, Reply } from 'components';
+import {
+  Badge,
+  FullButton,
+  Layout,
+  Question,
+  Reply,
+  UserProfile,
+} from 'components';
 import type { NextPage } from 'next';
 
 const CommunityPostDetail: NextPage = () => {
@@ -6,15 +13,7 @@ const CommunityPostDetail: NextPage = () => {
     <Layout title='Steve Jebs' canGoBack>
       <div className='py-3 px-4'>
         <Badge />
-        <div className='mb-3 flex cursor-pointer items-center space-x-3  border-b px-4 pb-3'>
-          <div className='h-10 w-10 rounded-full bg-slate-300' />
-          <div>
-            <p className='text-sm font-medium text-gray-700'>Steve Jebs</p>
-            <p className='text-xs font-medium text-gray-500'>
-              View profile &rarr;
-            </p>
-          </div>
-        </div>
+        <UserProfile userName='Steve Jebs' />
         <div>
           <Question
             question='What is the best

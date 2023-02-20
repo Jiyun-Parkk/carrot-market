@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+
 interface ItemProps {
   productName: string;
   color: string;
@@ -7,10 +9,16 @@ interface ItemProps {
 }
 
 export const Item = (props: ItemProps) => {
+  const router = useRouter();
   const { likedCount, chatCount, productName, color, price } = props;
-
+  const onClickItem = (id: string) => {
+    router.push(`/items/${id}`);
+  };
   return (
-    <div className='flex cursor-pointer  justify-between px-4 py-5'>
+    <div
+      className='flex cursor-pointer  justify-between px-4 py-5'
+      onClick={() => onClickItem(productName)}
+    >
       <div className='flex space-x-4'>
         <div className='h-20 w-20 rounded-md bg-gray-400' />
         <div className='flex flex-col pt-2'>

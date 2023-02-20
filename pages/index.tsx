@@ -7,6 +7,7 @@ const Home: NextPage = () => {
   const onClickFloatButton = () => {
     router.push('/items/upload');
   };
+
   return (
     <Layout title='Home' hasTabBar>
       <div className='flex flex-col  divide-y-[1px] py-10'>

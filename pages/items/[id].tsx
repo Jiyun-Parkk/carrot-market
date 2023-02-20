@@ -1,23 +1,18 @@
-import { Layout } from 'components';
+import { Layout, UserProfile } from 'components';
 import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
 
 const ItemDetail: NextPage = () => {
+  const { query } = useRouter();
+  console.log(query.id);
   return (
-    <Layout canGoBack>
+    <Layout title={query.id as string} canGoBack>
       <div className='px-4 py-10'>
         <div>
-          <div className='h-96 bg-slate-300' />
-          <div className='flex cursor-pointer items-center space-x-3 border-t border-b py-3'>
-            <div className='h-12 w-12 rounded-full bg-slate-300' />
-            <div>
-              <p className='text-sm font-medium text-gray-700'>Steve Jebs</p>
-              <p className='text-xs font-medium text-gray-500'>
-                View profile &rarr;
-              </p>
-            </div>
-          </div>
+          <div className='mb-5 h-96 bg-slate-300' />
+          <UserProfile userName='Steve Jebs' />
           <div className='mt-10'>
-            <h1 className='text-3xl font-bold text-gray-900'>Galaxy S50</h1>
+            <h1 className='text-3xl font-bold text-gray-900'>{query.id}</h1>
             <p className='mt-3 text-3xl text-gray-500'>$140</p>
             <p className='mt-6 text-justify text-gray-700'>
               My money&apos;s in that office, right? If she start giving me some
@@ -30,7 +25,7 @@ const ItemDetail: NextPage = () => {
               the first motherfucker to get shot. You understand?
             </p>
             <div className='mt-6 mb-8 flex items-center justify-between space-x-2'>
-              <button className='flex-1 rounded-md bg-orange-500 py-3 font-medium  text-white shadow-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2'>
+              <button className='flex-1 rounded-md bg-orange-500 py-3 font-medium  text-white shadow-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 hover:bg-orange-600'>
                 Talk to seller
               </button>
               <button className='flex items-center justify-center rounded-full p-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500'>
