@@ -1,6 +1,6 @@
 import { FullButton } from 'components';
 
-export const UploadItem = ({ buttonText }: { buttonText: string }) => {
+export const UploadItem = ({ buttonText, ...rest }: { buttonText: string }) => {
   return (
     <>
       <div>
@@ -53,6 +53,7 @@ export const UploadItem = ({ buttonText }: { buttonText: string }) => {
             rows={4}
             id='decription'
             className='mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500'
+            {...rest}
           />
         </div>
       </div>

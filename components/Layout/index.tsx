@@ -28,7 +28,7 @@ export const Layout = ({
       <div
         className={cls(
           !canGoBack ? 'justify-center' : '',
-          'fixed top-0 flex w-full max-w-xl items-center border-b bg-white  py-3 text-lg font-medium text-gray-800',
+          'fixed top-0 z-10 flex w-full max-w-xl items-center border-b bg-white  py-3 text-lg font-medium text-gray-800',
         )}
       >
         {canGoBack ? (
