@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// 이 파일을 기반으로 prisma는 데이터가 어떻게 생겼는지 정의해주고 데이터베이스를 수정해주고, 관리자 패널도 제공해준다. 그리고 타입스크립트의 타입도 생성해준다.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  avatar    String?
+  phone     Int?     @unique
+  email     String?  @unique
+}
+
+// autoincrement() 시퀀스에 따라 생성된 레코드의 id값에 증가된 값을 할당한다
+// @id 모델에 단일 필드 id를 지정한다.
+// @updatedAt update 될거라고 알려줌
+// @default 기본 값을 지정해준다
+// ?을 붙이면 옵셔널 값 없으면 필수 값
+// @unique 고유값을 가져야한다.
