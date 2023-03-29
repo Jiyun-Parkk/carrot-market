@@ -1,20 +1,33 @@
 import { useState } from 'react';
-import { Email, Phone, FullButton } from 'components';
+import { CustomInput, FullButton } from 'components';
 import { cls } from 'libs/utils';
 import { AiOutlineTwitter, AiFillGithub } from 'react-icons/ai';
-
+import { useForm } from 'react-hook-form';
+import { INPUT } from 'enums';
+import { EnterInfo } from 'types';
+interface EnterForm {
+  [INPUT.EMAIL]?: string;
+  [INPUT.PHONE]?: string;
+}
 export default function Enter() {
-  const [method, setMethod] = useState<'Email' | 'Phone'>('Email');
-  const onEmailClick = () => setMethod('Email');
-  const onPhoneClick = () => setMethod('Phone');
+  const { register, watch, reset, handleSubmit } = useForm<EnterForm>();
+  const [method, setMethod] = useState<EnterInfo>(INPUT.EMAIL);
 
+  const onChangeTab = (tabTitle: EnterInfo) => {
+    reset();
+    setMethod(tabTitle);
+  };
+
+  const handleEnter = (value: EnterForm) => {
+    console.log(value);
+  };
   return (
     <div className='mt-16 px-4'>
       <h3 className='text-center text-3xl font-bold'>Welcome to Carrot</h3>
       <div className='mt-16'>
         <div className='flex flex-col items-center'>
           <div className='mt-8 grid w-full grid-cols-2 gap-16 border-b'>
-            {['Email', 'Phone'].map((title) => (
+            {[INPUT.EMAIL, INPUT.PHONE].map((title) => (
               <button
                 key={title}
                 className={cls(
@@ -23,18 +36,27 @@ export default function Enter() {
                     ? 'border-b-orange-500 text-orange-400'
                     : 'border-transparent text-gray-500',
                 )}
-                onClick={title === 'Email' ? onEmailClick : onPhoneClick}
+                onClick={() => onChangeTab(title)}
               >
                 {title}
               </button>
             ))}
           </div>
         </div>
-        <form className='mt-8 flex flex-col'>
-          {method === 'Email' ? <Email /> : <Phone />}
+        <form
+          className='mt-8 flex flex-col'
+          onSubmit={handleSubmit(handleEnter)}
+        >
+          {method === INPUT.EMAIL ? (
+            <CustomInput name={INPUT.EMAIL} register={register(INPUT.EMAIL)} />
+          ) : (
+            <CustomInput name={INPUT.PHONE} register={register(INPUT.PHONE)} />
+          )}
           <FullButton
             text={
-              method === 'Email' ? 'Get login link' : 'Get one-time password'
+              method === INPUT.EMAIL
+                ? 'Get login link'
+                : 'Get one-time password'
             }
           />
         </form>
